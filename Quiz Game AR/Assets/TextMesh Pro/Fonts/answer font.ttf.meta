@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 0157da5bc9888724cb5454a9078379d1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Akzidenz-Grotesk Pro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e09f214b96eb93740be463d0eabe6431, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
