@@ -64,13 +64,11 @@ public class QuizCard : MonoBehaviour
     {
         if (canDisplayAnswerDescription)
         {
-            Debug.Log("flip");
             FlipQuizCard();
         }
 
         if (canDisplayQuestion)
         {
-            Debug.Log("Unflip");
             UnFlipQuizCard();
         }
     }
@@ -81,20 +79,12 @@ public class QuizCard : MonoBehaviour
         answerDescriptionPanel.SetActive(false);
 
         questionDisplay.text = questions.questions[currentQuestion].question;
-        Debug.Log("question: " + questions.questions[currentQuestion].question);
 
         correctAnswerDescriptionText.text = questions.questions[currentQuestion].correctAnswerDescription;
-        Debug.Log("correct answer description: " + questions.questions[currentQuestion].correctAnswerDescription);
-
 
         EnableAllOptionButtons();
-        Debug.Log("enabled buttons");
         ResetColorOfAllOptionButtons();
-        Debug.Log("reset color");
-
         AssignAnswerOptionsToButtons();
-        Debug.Log("assigned answer options to buttons");
-
 
         currentQuestion++;
         if (currentQuestion == questions.questions.Length)
@@ -115,17 +105,16 @@ public class QuizCard : MonoBehaviour
     private IEnumerator AnswerButtonPressedProcessing(Button button)
     {
         audioManager.Play("Drum roll");
-        Debug.Log("playing drum roll");
         yield return new WaitWhile(() => audioManager.IsPlaying("Drum roll"));
-        Debug.Log("playing drum roll");
         RevealCorrectAnswer(button);
 
         yield return new WaitWhile(() => audioManager.IsPlaying("Win") || audioManager.IsPlaying("Lose"));
-        Debug.Log("Finished win/lose");
 
         canDisplayQuestion = false;
         canDisplayAnswerDescription = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
+
+
         ShowAnswerDescriptionPanel();
     }
 
@@ -172,12 +161,11 @@ public class QuizCard : MonoBehaviour
 
     private IEnumerator UnflipToQuestion()
     {
-        Debug.Log("in method");
         canDisplayAnswerDescription = false;
         canDisplayQuestion = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         answerDescriptionPanel.SetActive(false);
-        Debug.Log("finished waitiong");
+        Debug.Log("finished waiting");
         DisplayQuestion();
     }
 
