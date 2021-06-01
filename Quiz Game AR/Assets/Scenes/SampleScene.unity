@@ -436,13 +436,13 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Lose
-    clip: {fileID: 8300000, guid: cb2c70c20d3574f40ba8576f07980ed2, type: 3}
+    clip: {fileID: 8300000, guid: b0eed192d5b9c8c47be112d990f2c56e, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Win
-    clip: {fileID: 8300000, guid: f3a4b9f87c4600647a3c1b8094b77c74, type: 3}
+    clip: {fileID: 8300000, guid: ebbef05860144c5459e7460ed3c9063a, type: 3}
     volume: 1
     pitch: 1
     loop: 0
