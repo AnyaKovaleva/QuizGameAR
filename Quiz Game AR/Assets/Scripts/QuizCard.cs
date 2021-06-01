@@ -35,11 +35,6 @@ public class QuizCard : MonoBehaviour
     private bool canDisplayQuestion;
     private bool canDisplayAnswerDescription;
 
-    private void Awake()
-    {
-
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +50,7 @@ public class QuizCard : MonoBehaviour
 
             questions = JSON_Reader.ReadQuestionCollection(questionJsonFileName);
             Debug.Log("Length = " + questions.questions.Length);
+            SuffleQuestions();
         }
         else
         {
@@ -274,6 +270,24 @@ public class QuizCard : MonoBehaviour
 
         }
 
+    }
+
+    private void SuffleQuestions()
+    {
+        if(questions != null)
+        {
+            Question tmp = new Question();
+            int numOfQuestions = questions.questions.Length;
+            for(int i=0; i < numOfQuestions; i++)
+            {
+                int questionNumber = Random.Range(i, questions.questions.Length);
+
+                tmp = questions.questions[questionNumber];
+                questions.questions[questionNumber] = questions.questions[i];
+                questions.questions[i] = tmp;
+            }
+
+        }
     }
 
 }
